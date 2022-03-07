@@ -1,0 +1,43 @@
+.redFont{
+    color: red;
+}
+.blueFont{
+    color: blue;
+}
+.greenFont{
+    color: green;
+}
+.bigFont{
+    font-size: 40px;
+}
+.tinyFont{
+    font-size: 12px;
+}
+.centerFont{
+    text-align: center;
+}
+.boldFont{
+    font-weight: bold;
+}
+.fontStyle{
+    font-family: "Times New Roman", Times, serif;
+}
+.multiFont{
+    font-size: 20px;
+    color: orange;
+    font-weight: bold;
+}
+.styledFont {
+    color: rgb(71, 203, 255);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#styledImage{
+    width: 200px;
+    height: 200px;
+    outline-style: solid;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 5px grey;
+}
