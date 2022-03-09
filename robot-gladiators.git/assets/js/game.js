@@ -1,6 +1,6 @@
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
-var playerAttack = 10;
+var playerAttack = 50;
 var playerMoney = 10;
 
 var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
@@ -22,7 +22,6 @@ var fight = function(enemyName) {
             break;
         }
     }
-    if (promptFight === "fight" || promptFight === "FIGHT") {
         //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
         enemyHealth = enemyHealth - playerAttack;
         // Log a resulting message to the console so we know that it worked.
@@ -46,24 +45,42 @@ var fight = function(enemyName) {
         else {
             window.alert(playerName + " still has " + playerHealth + " left!");
         }
-    } 
-    
+    }
+};
+
+var startGame = function() {
+    playerHealth = 100;
+    playerAttack = 10;
+    playerMoney = 10;
+    for(var i = 0; i < enemyNames.length; i++){
+        if (playerHealth > 0){
+            window.alert("Welcome to Robot Gladiators! Round " + (i+1));
+            var pickedEnemyName = enemyNames[i];
+            enemyHealth = 50;
+            fight(pickedEnemyName);
+        }
+        else {
+            window.alert("You have lost your robot in battle! Game Over!");
+            break;
+        }
+    }
+    var endGame = function() {
+    if (playerHealth > 0) {
+        window.alert("Great job! You have a score of " + playerMoney);
+    }
     else {
-        window.alert("You need to choose a valid option");
+        window.alert("You lost your robot");
     }
+    var playAgainConfirm = window.confirm("would you like to play again?");
+
+    if (playAgainConfirm) {
+        startGame();
     }
+    else {
+        window.alert("Thanks for playing!");
+    }
+}
+    endGame();
 }
 
-for(var i = 0; i < enemyNames.length; i++){
-    if (playerHealth > 0){
-        window.alert("Welcome to Robot Gladiators! Round " + (i+1));
-    }
-    else {
-        window.alert("You have lost your robot in battle! Game Over!");
-        break;
-    }
-    var pickedEnemyName = enemyNames[i];
-    enemyHealth = 50;
-    fight(pickedEnemyName);
-}
 
